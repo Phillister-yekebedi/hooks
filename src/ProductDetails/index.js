@@ -15,7 +15,7 @@ const Products = ()=>{
             setLoading(true)
             const response = await fetch('https://dummyjson.com/products')
             const result = await response.json();
-            setProducts(result.products);
+            setProducts(result.ProductDetails);
             setLoading(false);
         }
         catch(error){
@@ -27,18 +27,19 @@ const Products = ()=>{
     }
     return(
         <div >
-            <h2>List of Products</h2>
-            <div className="product">
-            {products.map(item=>(
+            <h2>Products Data</h2>
+            <div className="product-data">
+            {products && products.map(item=>(
                 <div key={item.id}>
                     <img src={item.thumbnail} placeholder="Picture"></img>
                     <h3>{item.title}</h3>
+                    <h3>{item.reviews}</h3>
+                    <p>{item.stars}</p>
                     <h4>{item.price}</h4>
-                    <h5>{item.discountPercentage}</h5>
                 </div>
             ))}
             </div>
         </div>
     )
 }
-export default ProductsDetails;
+export default ProductDetails;
