@@ -1,0 +1,11 @@
+.product{
+    display: grid;
+    /* display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px; */
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    
+}
+
